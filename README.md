@@ -71,8 +71,8 @@ However, these few functionalities will be enough.
 First, you can change the course name.
 Click "course" button and enter a name you want.
 You can check other courses on the left side menu. They also act as a link to each page.
-<img src="./example_images/course_button.jpg" ></img><br/>
-![Alt text](./example_images/course_button.jpg)
+<img src="example_images/course_button.jpg" ></img><br/>
+![Alt text](example_images/course_button.jpg)
 ![Alt text](./example_images/side_menu.jpg)
 
 Second, you can add a score element.
