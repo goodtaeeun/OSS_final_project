@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <script src="https://www.gstatic.com/firebasejs/7.15.0/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.15.0/firebase-firestore.js"></script>
+
+  <title>Grade Tracker</title>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" type="text/css" />
+  <link href="https://unpkg.com/gijgo@1.9.13/css/gijgo.min.css" rel="stylesheet" type="text/css" />
+  <link href="/Content/demo.css" rel="stylesheet" type="text/css" />
+  <!-- Bootstrap core CSS -->
+  <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Custom styles for this template -->
+  <link href="css/simple-sidebar.css" rel="stylesheet">
+
+
+</head>
+
+<body>
+  <div class="d-flex" id="wrapper">
+
+    <!-- Sidebar -->
+    <div class="bg-light border-right" id="sidebar-wrapper">
+      <div class="sidebar-heading">20-1 학기 </div>
+      <p>&nbsp&nbsp&nbsp&nbsp&nbsp과목들</p>
+
+      <div class="list-group list-group-flush">
+        <a href="./index.html" class="list-group-item list-group-item-action bg-light" ><span id="c1" ></span></a>
+        <a href="./course2.html" class="list-group-item list-group-item-action bg-light"><span id="c2" ></span></a>
+        <a href="./course3.html" class="list-group-item list-group-item-action bg-light"><span id="c3" ></span></a>
+        <a href="./course4.html" class="list-group-item list-group-item-action bg-dark active"><span id="c4" ></span></a>
+        <a href="./course5.html" class="list-group-item list-group-item-action bg-light"><span id="c5" ></span></a>
+        <a href="./course6.html" class="list-group-item list-group-item-action bg-light"><span id="c6" ></span></a>
+        <a href="./course7.html" class="list-group-item list-group-item-action bg-light"><span id="c7" ></span></a>
+        <a href="./course8.html" class="list-group-item list-group-item-action bg-light"><span id="c8" ></span></a>
+      </div>
+    </div>
+    <!-- /#sidebar-wrapper -->
+
+    <!-- Page Content -->
+    <div id="page-content-wrapper">
+
+      <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom">
+        <!-- <button class="btn btn-primary" id="menu-toggle">Menu</button> -->
+
+        <div>
+          <button id="btnAdd" class="btn btn-outline-secondary" type="button" style="color: black">Add</button>
+        </div>
+        <div>
+          <button id="btnCourseName" class="btn btn-outline-secondary" type="button" style="color: black">Course</button>
+        </div>
+
+        <div class="text_title">
+          <p id="title"> </p>
+        </div>
+
+        <div class="text_title">
+          <p id="current_score"> </p>
+        </div>
+        <div class="text_title">
+          <p id="expected"> </p>
+        </div>
+
+
+        
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
+            <form class="form-inline ml-auto">
+              <!--<div class="input-group">
+                <input id="txtName" type="text" class="form-control border-dark" placeholder="Search">
+                <div class="input-group-append">
+                  <button id="btnSearch" class="btn btn-outline-secondary" type="button"><i class="fa fa-search"></i>Enter</button>
+                  <button id="btnClear" class="btn btn-outline-secondary" type="button"><i class="fa fa-search"></i>Reset</button>
+                </div>
+              </div> -->
+            </form>
+          </ul>
+        </div>
+      </nav>
+      <!-- Editable table -->
+      <div class="gj-clear-both"></div>
+      <div class="gj-margin-top-10">
+        <table id="grid"></table>
+      </div>
+
+      <div id="dialog_add" class="input_dialog">
+        <div data-role="body">
+          <input type="hidden" id="ID_add" />
+          <div class="">
+            <input type="text" class="gj-textbox-md" id="name_add" placeholder="Score name...">
+          </div>
+          <div class="">
+            <input type="text" class="gj-textbox-md" id="full_point_add" placeholder="full score..." />
+          </div>
+          <div class="">
+            <input type="text" class="gj-textbox-md" id="my_point_add" placeholder="my score...">
+          </div>
+          <div class="">
+            <input type="text" class="gj-textbox-md" id="ratio_add" placeholder="ratio...">
+          </div>
+        </div>
+
+        <div data-role="footer">
+          <button type="button" id="btnSave_add" class="gj-button-md">Save</button>
+          <button type="button" id="btnCancel_add" class="gj-button-md">Cancel</button>
+        </div>
+      </div>
+
+      <div id="dialog_edit" class="gj-display-none">
+        <div data-role="body">
+          <input type="hidden" id="ID_edit" />
+          <div class="">
+            <input type="text" class="gj-textbox-md" id="name_edit" placeholder="score name...">
+          </div>
+          <div class="gj-margin-top-20">
+            <input type="text" class="gj-textbox-md" id="full_point_edit" placeholder="full score..." />
+          </div>
+          <div class="">
+            <input type="text" class="gj-textbox-md" id="my_point_edit" placeholder="my score...">
+          </div>
+          <div class="">
+            <input type="text" class="gj-textbox-md" id="ratio_edit" placeholder="ratio...">
+          </div>
+        </div>
+        
+        <div data-role="footer">
+          <button type="button" id="btnSave_edit" class="gj-button-md">Save</button>
+          <button type="button" id="btnCancel_edit" class="gj-button-md">Cancel</button>
+        </div>
+      </div>
+
+      <div id="dialog_course" class="input_dialog">
+        <div data-role="body">
+          <input type="hidden" id="ID_course" />
+          <div class="">
+            <input type="text" class="gj-textbox-md" id="new_course_name" placeholder="New Course name...">
+          </div>
+
+          <div data-role="footer">
+          <button type="button" id="btnSave_course" class="gj-button-md">Save</button>
+          <button type="button" id="btnCancel_course" class="gj-button-md">Cancel</button>
+          </div>
+        </div>
+      
+
+
+    </div>
+
+      
+      <!-- Editable table -->
+  <!-- /#page-content-wrapper -->
+</div>
+  </div>
+<!-- /#wrapper -->
+
+<!-- Footer -->
+<footer class="page-footer font-small blue">
+  <div class="footer-copyright text-center py-3">© 2020 Copyright:
+   20-1 OSS Final Project
+ </div>
+</footer>
+<!-- Footer -->
+
+<!-- Call JavaScript -->
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+<script src="https://unpkg.com/gijgo@1.9.13/js/gijgo.min.js" type="text/javascript"></script>
+<script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script type="text/javascript" src="./vendor/jquery/checkbox.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.15.0/firebase-analytics.js"></script>
+
+<!-- Menu Toggle Script -->
+<script>
+  $("#menu-toggle").click(function(e) {
+    e.preventDefault();
+    $("#wrapper").toggleClass("toggled");
+  });
+
+      const $td = $(this).find('td');
+      const h = {};
+</script>
+  <script type="text/javascript">
+    
+    $(document).ready(function () {
+      // Your web app's Firebase configuration
+      var firebaseConfig = {
+        apiKey: "AIzaSyCDCXU4a9qZwEzRevPx5pT0yW8Uu_zbt4I",
+        authDomain: "gradetracker-9f956.firebaseapp.com",
+        databaseURL: "https://gradetracker-9f956.firebaseio.com",
+        projectId: "gradetracker-9f956",
+        storageBucket: "gradetracker-9f956.appspot.com",
+        messagingSenderId: "368658407712",
+        appId: "1:368658407712:web:f7024d6989897988d6f745",
+        measurementId: "G-VWNF2C8LLJ"
+      };
+      // Initialize Firebase
+      firebase.initializeApp(firebaseConfig);
+      firebase.analytics();
+    const db = firebase.firestore();  
+
+    var grid, dialog;
+    var data = [];
+    var nextID = 0;
+    var course_name;
+    var course_list = [];
+    var ratio_list = [];
+    var final_point_list = [];
+    
+
+    db.collection('course_list').orderBy('id').get().then((snapshot) => {
+      let changes = snapshot.docChanges();
+        changes.forEach(change => {
+            course_list.push( change.doc.data().name );
+        })
+        course_name = course_list[3] ;
+        document.getElementById('title').innerHTML = course_name ;
+        document.getElementById('c1').innerHTML = course_list[0] ;
+        document.getElementById('c2').innerHTML = course_list[1] ;
+        document.getElementById('c3').innerHTML = course_list[2] ;
+        document.getElementById('c4').innerHTML = course_list[3] ;
+        document.getElementById('c5').innerHTML = course_list[4] ;
+        document.getElementById('c6').innerHTML = course_list[5] ;
+        document.getElementById('c7').innerHTML = course_list[6] ;
+        document.getElementById('c8').innerHTML = course_list[7] ;
+
+
+    })
+
+    db.collection('course4').orderBy('name').get().then((snapshot) => {
+      let changes = snapshot.docChanges();
+        changes.forEach(change => {
+          ratio_list.push(change.doc.data().ratio);
+          final_point_list.push(change.doc.data().final_point) ;
+        })
+        var final_point_sum = 0 ;
+        var ratio_sum = 0 ;
+
+        for(var i in final_point_list){
+          final_point_sum += Number(final_point_list[i]);
+        }
+        for(var j in ratio_list){
+          ratio_sum += Number(ratio_list[j]);
+        }
+        final_point_sum = Math.ceil(final_point_sum) ;
+        var expected = (100 - Number(ratio_sum)) + Number(final_point_sum) ;
+        var msg = '';
+        msg = msg.concat( "Total ", Number(final_point_sum), " out of " + Number(ratio_sum) ) ;
+        document.getElementById('current_score').innerHTML = msg ;
+        msg = "Expected: " + Number(expected) + " / 100";
+        document.getElementById('expected').innerHTML = msg ;
+
+
+    })
+
+    db.collection('course4').orderBy('name').get().then((snapshot) => {
+      let changes = snapshot.docChanges();
+        changes.forEach(change => {
+          if(change.type == 'added'){
+            data.push({ 'ID': change.doc.id, 'name': change.doc.data().name, 'full_point': change.doc.data().full_point,  'my_point': change.doc.data().my_point, 'ratio': change.doc.data().ratio, 'final_point': change.doc.data().final_point });
+            if(parseInt(change.doc.id) > nextID - 1) nextID = parseInt(change.doc.id) + 1;
+            console.log(nextID);
+
+          }
+
+        })
+
+
+        grid = $('#grid').grid({
+          primaryKey: 'ID',
+          dataSource: data,
+          columns: [
+            { field: 'ID', hidden: true},
+            { field: 'name', title: 'Score name', sortable: true },
+            { field: 'full_point', title: 'Full score', sortable: false },
+            { field: 'my_point', title: 'My score', sortable: false },
+            { field: 'ratio', title: 'Percentage', sortable: false },
+            { field: 'final_point', title: 'Final score', sortable: false },
+            { width: 64, tmpl: '<span class="material-icons gj-cursor-pointer">edit</span>', align: 'center', events: { 'click': Edit } },
+            { width: 64, tmpl: '<span class="material-icons gj-cursor-pointer">delete</span>', align: 'center', events: { 'click': Delete } }
+          ],
+          pager: { limit: 5 }
+        });
+        dialog_add = $('#dialog_add').dialog({
+          autoOpen: false,
+          resizable: false,
+          modal: true,
+          width: 360
+        });
+        dialog_edit = $('#dialog_edit').dialog({
+          autoOpen: false,
+          resizable: false,
+          modal: true,
+          width: 360
+        });
+        dialog_course = $('#dialog_course').dialog({
+          autoOpen: false,
+          resizable: false,
+          modal: true,
+          width: 360
+        });
+        dialog_grade = $('#dialog_grade').dialog({
+          autoOpen: false,
+          resizable: false,
+          modal: true,
+          width: 360
+        });
+        function Edit(e) {
+          $('#ID_edit').val(e.data.id);
+          $('#name_edit').val(e.data.record.name);
+          $('#full_point_edit').val(e.data.record.full_point);
+          $('#my_point_edit').val(e.data.record.my_point);
+          $('#ratio_edit').val(e.data.record.ratio);
+          $('#final_point_edit').val(e.data.record.final_point);
+          dialog_edit.open('Edit Info.');
+        }
+        function Delete(e) {
+          if (confirm('Are you sure?')) {
+            db.collection('course4').doc(e.data.id.toString()).delete();
+            grid.removeRow(e.data.id);
+          }
+        }
+        
+        
+        
+        function Save_add() {
+          
+          db.collection('course4').doc(nextID.toString()).set({
+            id: nextID,
+            name: $('#name_add').val(),
+            full_point: Number($('#full_point_add').val()),
+            my_point: Number($('#my_point_add').val()),
+            ratio: Number($('#ratio_add').val()),
+            final_point: (Number($('#ratio_add').val()) / Number($('#full_point_add').val())) * Number($('#my_point_add').val()) ,
+          })
+            grid.addRow({
+              'ID': nextID, 
+              'name': $('#name_add').val(),
+              'full_point': Number($('#full_point_add').val()),
+              'my_point': Number($('#my_point_add').val()),
+              'ratio': Number($('#ratio_add').val()),
+              'final_point': (Number($('#ratio_add').val()) / Number($('#full_point_add').val())) * Number($('#my_point_add').val()) ,
+              });
+          
+          nextID++;
+          dialog_add.close();
+        }
+        $('#btnSave_add').on('click', Save_add);
+        $('#btnCancel_add').on('click', function () {
+          dialog_add.close();
+        });
+
+
+        $('#btnAdd').on('click', function () {
+          $('#ID_add').val('');
+          $('#name_add').val('');
+          $('#full_point_add').val('');
+          $('#my_point_add').val('');
+          $('#ratio_add').val('');
+          $('#final_point_add').val('');
+          dialog_add.open('Add Items');
+        });
+
+        function Save_edit() {
+          var id = parseInt($('#ID_edit').val());
+
+          db.collection('course4').doc(id.toString()).set({
+            id: id,
+            name: $('#name_edit').val(),
+            full_point: $('#full_point_edit').val(),
+            my_point: $('#my_point_edit').val(),
+            ratio: $('#ratio_edit').val(),
+            final_point: (Number($('#ratio_edit').val()) / Number($('#full_point_edit').val()))*Number($('#my_point_edit').val()) ,
+          }, {merge: true});
+          grid.updateRow(id, { 
+            'ID' : id,
+            'name': $('#name_edit').val(),
+            'full_point': $('#full_point_edit').val(),
+            'my_point': $('#my_point_edit').val(),
+            'ratio': $('#ratio_edit').val(),
+            'final_point': (Number($('#ratio_edit').val()) / Number($('#full_point_edit').val()))*Number($('#my_point_edit').val()) ,
+          });
+
+          dialog_edit.close();
+        }
+        $('#btnSave_edit').on('click', Save_edit);
+        $('#btnCancel_edit').on('click', function () {
+          dialog_edit.close();
+        });
+
+        
+
+        
+        
+        
+
+      })
+
+      function Save_course() {
+          db.collection('course_list').doc('4').set({
+            name: $('#new_course_name').val()
+          }, {merge: true});
+          course_name = $('#new_course_name').val() ;
+          //window.location.reload() ;           
+          dialog_course.close() ;
+        }
+        $('#btnCourseName').on('click', function () {
+          $('#ID_course').val();
+          $('#new_course_name').val();
+          dialog_course.open(course_name);
+        });
+        $('#btnSave_course').on('click', Save_course);
+        $('#btnCancel_course').on('click', function () {
+          //window.location.reload() ;
+          dialog_course.close();
+        });
+
+    });
+  </script>
+</body>
+
+</html>

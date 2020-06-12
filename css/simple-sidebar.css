@@ -1,0 +1,131 @@
+/*!
+ * Start Bootstrap - Simple Sidebar (https://startbootstrap.com/template-overviews/simple-sidebar)
+ * Copyright 2013-2019 Start Bootstrap
+ * Licensed under MIT (https://github.com/BlackrockDigital/startbootstrap-simple-sidebar/blob/master/LICENSE)
+ */
+ body {
+  overflow-x: hidden;
+}
+
+#sidebar-wrapper {
+  min-height: 100vh;
+  margin-left: -15rem;
+  -webkit-transition: margin .25s ease-out;
+  -moz-transition: margin .25s ease-out;
+  -o-transition: margin .25s ease-out;
+  transition: margin .25s ease-out;
+}
+
+#sidebar-wrapper .sidebar-heading {
+  padding: 0.875rem 1.25rem;
+  font-size: 1.2rem;
+}
+
+#sidebar-wrapper .list-group {
+  width: 15rem;
+}
+
+#page-content-wrapper {
+  min-width: 100vw;
+}
+
+#wrapper.toggled #sidebar-wrapper {
+  margin-left: 0;
+}
+
+@media (min-width: 768px) {
+  #sidebar-wrapper {
+    margin-left: 0;
+  }
+
+  #page-content-wrapper {
+    min-width: 0;
+    width: 100%;
+  }
+
+  #wrapper.toggled #sidebar-wrapper {
+    margin-left: -15rem;
+  }
+}
+
+.preserve-3d {
+  transform-style: preserve-3d;
+  -webkit-transform-style: preserve-3d;
+}
+
+.text_title {
+  top: 50%;
+  width: 200px;
+  height: 50px;
+  padding-top: 10px;
+  font-size: 20px;
+  position: relative;
+  text-align: center;
+}
+
+.button_base {
+
+  border: 0;
+  font-size: 14px;
+  position: relative;
+  top: 50%;
+  width: 60px;
+  height: 40px;
+  text-align: center;
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-user-select: none;
+  cursor: default;
+}
+
+.button_base:hover {
+  cursor: pointer;
+}
+
+.btn_electric {
+  color: #000000;
+  background-color: #ffffff;
+  border: #D8D8D8 solid 0.5px;
+  padding: 8px;
+  transition: all 0.1s ease;
+  padding: -10px
+   /* -webkit-transition: all 0.1s ease;
+   -moz-transition: all 0.1s ease;*/
+ }
+
+ .btn_electric:hover {
+  color: #ffffff;
+  background-color: #D8D8D8;
+  border: #D8D8D8 solid 1px;
+  animation: btn_electric_blinkIn 0.1s step-end 0 2;
+  -webkit-animation: btn_electric_blinkIn 0.1s step-end 0 2;
+  -moz-animation: btn_electric_blinkIn 0.1s step-end 0 2;
+   /* transition: all 0.2s ease 0.2s;
+    -webkit-transition: all 0.2s ease 0.2s;
+    -moz-transition: all 0.2s ease 0.2s;*/
+  }
+
+  @-webkit-keyframes btn_electric_blinkIn {
+    from,
+    to {
+      background-color: #f8f8f8;
+      color: #080808;
+    }
+    50% {
+      background-color: #ffffff;
+      color: #D8D8D8;
+    }
+  }
+
+  @-moz-keyframes btn_electric_blinkIn {
+    from,
+    to {
+      background-color: #f8f8f8;
+      color: #080808;
+    }
+    50% {
+      background-color: #ffffff;
+      color: #D8D8D8;
+    }
+  }
