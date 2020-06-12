@@ -1,4 +1,4 @@
-21400217 Tae Eun Kim / 20-1 Opensource SW practice Final project
+21400217 Tae Eun Kim / 20-1 Opensource SW Lab Final project
 
 # What is Grade Tracker? 💯
 
@@ -144,10 +144,18 @@ In case this explanation is not sufficient, you can refer to this Demo video.
 
 
 
- 
- 
- 
- 
+ <br/><br/>
+## Contributions
+There is a refernce to this project.
+It is DEMS, Dormitory union Equipment Managemnet System.
+I used the base structure of that system.  
+However, I built my own DB and had to make new fuctions to use different format of data.
+I also added a feature to use the DB data in the html page without using grid chart.
+This was done by using javascript variable in html body part.
+I have used the general design and the mecahnism of using DB, but the unique functionalities of Grade Tracker is made by me.
+
+
+The link to DEMS is this: https://github.com/DormUnion/DEMS-admin.github.io
 
 
 <br/><br/>
