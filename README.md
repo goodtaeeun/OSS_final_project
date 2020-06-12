@@ -1,80 +1,95 @@
-My student ID is 21400217
-# 1. 설치 방법
+21400217 Tae Eun Kim / 20-1 Opensource SW practice Final project
 
-설치는 크게 두가지로 할 수 있다.
+# What is Grade Tracker? 💯
 
-첫째는 터미널에서 NPM으로 설치 (>npm install qartjs)
+Grade Checker is a SW that helps you keep track of your scores and grades.
 
-두번째는 깃허브에서 클론해 오는 것이다.
+## How to start
 
-개인적으로는 깃허브에서 클론해 오는 것이 가장 깔끔하고 편했다.
+You can clone from this directory and use source codes. 
 
-# 2. 사용 방법
+However, you must use your own Firebase database to make it solely yours.
 
-QArt 소개 글에서 말했지만 이 프로그램은 사용 방법이 굉장히 다양하다.
+Make a Firebase database and replace this code with yours.
 
-그 중에서 나는 html을 사용해 웹에 띄웠다.
+```jsx
+var firebaseConfig = {
+        apiKey: "AIzaSyCDCXU4a9qZwEzRevPx5pT0yW8Uu_zbt4I",
+        authDomain: "gradetracker-9f956.firebaseapp.com",
+        databaseURL: "https://gradetracker-9f956.firebaseio.com",
+        projectId: "gradetracker-9f956",
+        storageBucket: "gradetracker-9f956.appspot.com",
+        messagingSenderId: "368658407712",
+        appId: "1:368658407712:web:f7024d6989897988d6f745",
+        measurementId: "G-VWNF2C8LLJ"
+      };
+//This section of code will be provided from Firebase
+```
 
-단계별로 알아보자.
+## How it works
 
-우선 Repository를 클론해오면 ./example 폴더 안에 index.html 파일이 있다.
+It is basically a html page connected to a Firebase database.
 
-![https://s3-us-west-2.amazonaws.com/secure.notion-static.com/75831f28-0bbf-4cd6-9b8b-9e45ba8bae2d/Untitled.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/75831f28-0bbf-4cd6-9b8b-9e45ba8bae2d/Untitled.png)
+We can read, write, delete the data in the database through html.
 
-해당 html파일을 실행하면  아래와 같은 페이지가 열린다.
+It may be used as a local html document or it can be hosted via a server.
 
-![https://s3-us-west-2.amazonaws.com/secure.notion-static.com/5872cee2-7840-4dda-8a8b-0898bc19ee36/Untitled.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/5872cee2-7840-4dda-8a8b-0898bc19ee36/Untitled.png)
+To be able to use the Firebase in the html, we must insert some code sections in the html document via javascript.
 
-![https://s3-us-west-2.amazonaws.com/secure.notion-static.com/94dda3bd-6613-47cc-bdc8-4b0b2e930d49/Untitled.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/94dda3bd-6613-47cc-bdc8-4b0b2e930d49/Untitled.png)
+```jsx
+<script src="https://www.gstatic.com/firebasejs/7.15.0/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.15.0/firebase-firestore.js"></script>
+//code section to be able to use Firebase DB
 
-원래 개발자가 테스트용으로 만든 페이지라서 기본값들이 여러개 설정되어 있는 것을 볼 수 있다.
+firebase.initializeApp(firebaseConfig);
+firebase.analytics();
+const db = firebase.firestore();
+//code section to initialize firebase in the html
+```
 
-참고로 사진의 저 분이 바로 원래 개발자시다.(훈훈하시다)
+To use the actual data from the FireBase DB, we can use the code below.
 
-나는 표현이 모호한 것을 고치고 색상을 좀 더 취향대로 html파일을 수정해보았다.
+```jsx
+db.collection('collection_name').orderBy('field_name').get().then((snapshot) => {
+      //what you want to do
+ });
 
-그 결과 이런 페이지가 나왔다.
+db.collection('collection_name').doc('document_name').set()({
+      //what you want to do
+ });
 
-![https://s3-us-west-2.amazonaws.com/secure.notion-static.com/0143ec99-b348-4550-9483-ef6e37ca5cf5/Untitled.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/0143ec99-b348-4550-9483-ef6e37ca5cf5/Untitled.png)
+//examples of code to read and write on Firebase DB
+```
 
-![https://s3-us-west-2.amazonaws.com/secure.notion-static.com/6c83ba3c-04d7-468b-ab0e-987d2e9dd25e/Untitled.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/6c83ba3c-04d7-468b-ab0e-987d2e9dd25e/Untitled.png)
+## How to Use
 
-기존과 바뀐 점은 다음과 같다.
+The interface is very simple.
+There are maximum 8 pages you can use for each course you are taking.
+There isn't much you can do, which makes it simple.
+However, these few functionalities will be enough.
 
-1. 명확하지 않은 Lable들을 바꿨다. (Value→URL, Threshsold→ Grey scale)
-2. Background의 기본값을 화이트로 바꿨다. (CSS color code를 위해서는 아래의 사이트를 참조했다. [https://www.w3schools.com/cssref/css_colors.asp](https://www.w3schools.com/cssref/css_colors.asp))
-3. 컬러메뉴와 파일 선택 메뉴의 위치를 바꿨다.
-4. 개발자 사진을 뺐다.
-5. 배경색을 마음이 편안해지는 초록색으로 바꿨다.
+First, you can change the course name.
+Click "course" button and enter a name you want.
+You can check other courses on the left side menu. They also act as a link to each page.
+![Alt text](./example_images/course_button.jpg)
+![Alt text](./example_images/side_menu.jpg)
 
-각 메뉴에 대한 설명은 다음과 같다.
+Second, you can add a score element.
+You need to provide what score it is (quiz1, midterm, etc.), its full score, your score, the percentage of it (the ratio).
+![Alt text](./example_images/score_add.jpg)
 
-URL: QR 코드를 만들고 싶은 URL을 입력
+Third, you can edit and delete a score element.
+This part is very intuitive.... You can find it easy.
+![Alt text](./example_images/edit_delete.jpg)
 
-Background: 생성될 QR코드의 여백을 채울 색의 CSS코드 입력
+Forth, you can view the scores.
+For each score element, you can check the score out of 100 that is calculated with the percentage.
+![Alt text](./example_images/current_score.jpg)
 
-Size: QR코드의 크기를 픽셀 단위로 입력
 
-Version: QR코드의 버젼 입력
 
-Fill type: 여백을 남길건지, 꽉 채울건지를 결정
+This is the end.
+I hope you enjoy it.
+If there is any problem, feel free to leave a issue.
 
-사진을 선택하면 다음과 같은 결과가 나온다.
-
-![https://s3-us-west-2.amazonaws.com/secure.notion-static.com/09a0c9db-6e96-494d-92c1-9805640ef9a4/Untitled.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/09a0c9db-6e96-494d-92c1-9805640ef9a4/Untitled.png)
-
-상단에는 각각 QR코드와 사진의 원본이, 그리고 아래에는 합쳐진 결과를 보여준다.
-
-# 3. 호스팅 방법
-
-html 파일을 나만 갖고 있으면 아무 소용이 없으니 웹에 올려보기로 했다.
-
-1. 우선 깃허브에 Repository를 하나 만든다.
-2. 그리고 클론해온 파일들을 여기도 넣어준다.
-3. html 파일에 잇는 소스파일들의 경로는 다시 설정해준다.
-4. 이 Repository의 설정에 가면 링크가 있다.
-5. 그 주소로 들어가면 자동으로 html 파일이 실행된다.
-
-그 결과 나온 주소는 밑에 있다.
-
-[https://goodtaeeun.github.io/FirstWeb/](https://goodtaeeun.github.io/FirstWeb/)
+Also, you can view the overall score upto this point and check the expected maximum score out of 100.
