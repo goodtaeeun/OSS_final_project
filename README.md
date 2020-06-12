@@ -6,7 +6,7 @@ Grade Tracker is a SW that helps you keep track of your scores and grades.
 If you take mutiple courses, it is hard to keep track of your scores.   
 As the semster reaches its end, wen must figure out where to invest more effort.   
 This SW will help you in that time.   
-
+<br/><br/>
 
 
 
@@ -33,7 +33,7 @@ var firebaseConfig = {
 //This section of code will be provided from Firebase
 ```
 
-
+<br/><br/>
 
 
 
@@ -77,7 +77,7 @@ db.collection('collection_name').doc('document_name').set()({
 
 
 
-
+<br/><br/><br/>
 
 
 ## How to Use
@@ -90,7 +90,7 @@ However, these few functionalities will be enough.
    
    
    
-   
+   <br/><br/>
 ### First, you can change the course name.
 Click "course" button and enter a name you want.   
 You can check other courses on the left side menu. They also act as a link to each page.   
@@ -101,7 +101,7 @@ You can check other courses on the left side menu. They also act as a link to ea
     
  
  
- 
+ <br/><br/>
 ### Second, you can add a score element.
 You need to provide what score it is (quiz1, midterm, etc.), its full score, your score, the percentage of it (the ratio).   
 
@@ -113,7 +113,7 @@ You need to provide what score it is (quiz1, midterm, etc.), its full score, you
 
 
 
-
+<br/><br/>
 ### Third, you can edit and delete a score element.
 This part is very intuitive.... You can find it easy.   
 
@@ -124,7 +124,7 @@ This part is very intuitive.... You can find it easy.
 
 
 
-
+<br/><br/>
 ### Forth, you can view the scores.
 For each score element, you can check the score out of 100 that is calculated with the percentage.   
 Also, you can view the overall score upto this point and check the expected maximum score out of 100.   
@@ -137,7 +137,7 @@ Also, you can view the overall score upto this point and check the expected maxi
 
 
 
-
+<br/><br/>
 ### Demo video
 In case this explanation is not sufficient, you can refer to this Demo video.   
 
@@ -150,7 +150,7 @@ In case this explanation is not sufficient, you can refer to this Demo video.
  
 
 
-
+<br/><br/>
 ## Informations can be found at
 If you want to do this kind of project,
 you can try to google with these keywords.   
@@ -165,7 +165,7 @@ These are the google searches I did myself to make this project.
 
 
 
-
+<br/><br/>
 ## Bye
 This is the end.   
 I hope you enjoy it.   
