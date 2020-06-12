@@ -7,6 +7,8 @@ If you take mutiple courses, it is hard to keep track of your scores.
 As the semster reaches its end, wen must figure out where to invest more effort.
 This SW will help you in that time.
 
+
+
 ## How to start
 
 You can clone from this directory and use source codes. 
@@ -28,6 +30,8 @@ var firebaseConfig = {
       };
 //This section of code will be provided from Firebase
 ```
+
+
 
 ## How it works
 
@@ -64,12 +68,16 @@ db.collection('collection_name').doc('document_name').set()({
 //examples of code to read and write on Firebase DB
 ```
 
+
+
 ## How to Use
 
 The interface is very simple.
 There are maximum 8 pages you can use for each course you are taking.
 There isn't much you can do, which makes it simple.
 However, these few functionalities will be enough.
+
+
 
 ### First, you can change the course name.
 Click "course" button and enter a name you want.
@@ -78,16 +86,22 @@ You can check other courses on the left side menu. They also act as a link to ea
 ![course_button](https://user-images.githubusercontent.com/57384091/84513214-190d5500-ad04-11ea-8094-dca3dd8e1eac.JPG)
 ![side_menu](https://user-images.githubusercontent.com/57384091/84513257-2b878e80-ad04-11ea-9714-4d4296f22d54.JPG)
 
+
+
 ### Second, you can add a score element.
 You need to provide what score it is (quiz1, midterm, etc.), its full score, your score, the percentage of it (the ratio).
 
 ![score_add](https://user-images.githubusercontent.com/57384091/84513270-2e827f00-ad04-11ea-9798-08733aa03d4d.JPG)
 ![add_menu](https://user-images.githubusercontent.com/57384091/84513535-891bdb00-ad04-11ea-94df-f832c7ae74e6.JPG)
 
+
+
 ### Third, you can edit and delete a score element.
 This part is very intuitive.... You can find it easy.
 
 ![edit_delete](https://user-images.githubusercontent.com/57384091/84513285-317d6f80-ad04-11ea-93b5-2bd250fa2ced.JPG)
+
+
 
 ### Forth, you can view the scores.
 For each score element, you can check the score out of 100 that is calculated with the percentage.
@@ -95,8 +109,13 @@ Also, you can view the overall score upto this point and check the expected maxi
 
 ![current_score](https://user-images.githubusercontent.com/57384091/84513305-36422380-ad04-11ea-8eb6-b5cfbf2a0352.JPG)
 
+
+
+
 ### Demo video
 In case this explanation is not sufficient, you can refer to this Demo video.
+
+
 
 
 
@@ -108,6 +127,8 @@ you can try to google with these keywords.
 - read data from firestore to javascript
 
 These are the google searches I did myself to make this project.
+
+
 
 
 
