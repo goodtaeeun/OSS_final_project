@@ -9,6 +9,8 @@ This SW will help you in that time.
 
 
 
+
+
 ## How to start
 
 You can clone from this directory and use source codes.    
@@ -30,6 +32,10 @@ var firebaseConfig = {
       };
 //This section of code will be provided from Firebase
 ```
+
+
+
+
 
 
 
@@ -70,12 +76,18 @@ db.collection('collection_name').doc('document_name').set()({
 
 
 
+
+
+
+
 ## How to Use
    
 The interface is very simple.   
 There are maximum 8 pages you can use for each course you are taking.   
 There isn't much you can do, which makes it simple.   
 However, these few functionalities will be enough.   
+   
+   
    
    
    
@@ -87,7 +99,9 @@ You can check other courses on the left side menu. They also act as a link to ea
 ![side_menu](https://user-images.githubusercontent.com/57384091/84513257-2b878e80-ad04-11ea-9714-4d4296f22d54.JPG)
    
     
-   
+ 
+ 
+ 
 ### Second, you can add a score element.
 You need to provide what score it is (quiz1, midterm, etc.), its full score, your score, the percentage of it (the ratio).   
 
@@ -95,14 +109,22 @@ You need to provide what score it is (quiz1, midterm, etc.), its full score, you
 ![add_menu](https://user-images.githubusercontent.com/57384091/84513535-891bdb00-ad04-11ea-94df-f832c7ae74e6.JPG)
 
    
-   
+
+
+
+
+
 ### Third, you can edit and delete a score element.
 This part is very intuitive.... You can find it easy.   
 
 ![edit_delete](https://user-images.githubusercontent.com/57384091/84513285-317d6f80-ad04-11ea-93b5-2bd250fa2ced.JPG)
 
    
-   
+
+
+
+
+
 ### Forth, you can view the scores.
 For each score element, you can check the score out of 100 that is calculated with the percentage.   
 Also, you can view the overall score upto this point and check the expected maximum score out of 100.   
@@ -111,14 +133,24 @@ Also, you can view the overall score upto this point and check the expected maxi
 
    
 
-   
+
+
+
+
+
 ### Demo video
 In case this explanation is not sufficient, you can refer to this Demo video.   
 
 
 
 
-   
+ 
+ 
+ 
+ 
+
+
+
 ## Informations can be found at
 If you want to do this kind of project,
 you can try to google with these keywords.   
@@ -127,6 +159,8 @@ you can try to google with these keywords.
 - read data from firestore to javascript   
    
 These are the google searches I did myself to make this project.   
+
+
 
 
 
