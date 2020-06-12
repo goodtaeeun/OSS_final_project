@@ -71,21 +71,21 @@ However, these few functionalities will be enough.
 First, you can change the course name.
 Click "course" button and enter a name you want.
 You can check other courses on the left side menu. They also act as a link to each page.
-<img src="example_images/course_button.jpg" ></img><br/>
-![Alt text](example_images/course_button.jpg)
-![Alt text](./example_images/side_menu.jpg)
+![course_button](https://user-images.githubusercontent.com/57384091/84513214-190d5500-ad04-11ea-8094-dca3dd8e1eac.JPG)
+![side_menu](https://user-images.githubusercontent.com/57384091/84513257-2b878e80-ad04-11ea-9714-4d4296f22d54.JPG)
 
 Second, you can add a score element.
 You need to provide what score it is (quiz1, midterm, etc.), its full score, your score, the percentage of it (the ratio).
-![Alt text](./example_images/score_add.jpg)
+![score_add](https://user-images.githubusercontent.com/57384091/84513270-2e827f00-ad04-11ea-9798-08733aa03d4d.JPG)
+![add_menu](https://user-images.githubusercontent.com/57384091/84513535-891bdb00-ad04-11ea-94df-f832c7ae74e6.JPG)
 
 Third, you can edit and delete a score element.
 This part is very intuitive.... You can find it easy.
-![Alt text](./example_images/edit_delete.jpg)
+![edit_delete](https://user-images.githubusercontent.com/57384091/84513285-317d6f80-ad04-11ea-93b5-2bd250fa2ced.JPG)
 
 Forth, you can view the scores.
 For each score element, you can check the score out of 100 that is calculated with the percentage.
-![Alt text](./example_images/current_score.jpg)
+![current_score](https://user-images.githubusercontent.com/57384091/84513305-36422380-ad04-11ea-8eb6-b5cfbf2a0352.JPG)
 
 
 
