@@ -2,7 +2,10 @@
 
 # What is Grade Tracker? 💯
 
-Grade Checker is a SW that helps you keep track of your scores and grades.
+Grade Tracker is a SW that helps you keep track of your scores and grades.
+If you take mutiple courses, it is hard to keep track of your scores.
+As the semster reaches its end, wen must figure out where to invest more effort.
+This SW will help you in that time.
 
 ## How to start
 
@@ -92,10 +95,26 @@ Also, you can view the overall score upto this point and check the expected maxi
 
 ![current_score](https://user-images.githubusercontent.com/57384091/84513305-36422380-ad04-11ea-8eb6-b5cfbf2a0352.JPG)
 
+### Demo video
+In case this explanation is not sufficient, you can refer to this Demo video.
+
+
+
+## Informations can be found at
+If you want to do this kind of project,
+you can try to google with these keywords.
+- use Firebase Firestore in javascript
+- use javascript variables in html
+- read data from firestore to javascript
+
+These are the google searches I did myself to make this project.
+
+
 
 ## Bye
 This is the end.
 I hope you enjoy it.
 If there is any problem, feel free to leave a issue.
 
+Or you can send an e-mail to me by this adresss. 21400217@handong.edu
 
