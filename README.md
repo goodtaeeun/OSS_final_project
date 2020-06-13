@@ -35,6 +35,9 @@ var firebaseConfig = {
 
 <br/><br/>
 
+If you have a raspberrypi, then you can host this service. Install Apache server, put all these contents under /var/www/html/, then you are on!
+<br/><br/>
+
 
 
 
@@ -157,6 +160,11 @@ I have used the general design and the mecahnism of using DB, but the unique fun
 
 
 The link to DEMS is this: https://github.com/DormUnion/DEMS-admin.github.io
+
+
+<br/>
+In this project, Giijgo is used. Gijgo is a set of free for commercial use javascript controls distributed under MIT License. I specifically used the grid widget to implement the table feature in the html. The link to the site is here. https://gijgo.com/
+
 
 
 <br/><br/>
