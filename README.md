@@ -150,13 +150,13 @@ https://youtu.be/q-0QQ15FC2s
 
  <br/><br/>
 ## Contributions
-There is a refernce to this project.
-It is DEMS, Dormitory union Equipment Managemnet System.
+There is a refernce to this project. It is DEMS, Dormitory union Equipment Managemnet System.
 I used the base structure of that system.  
 However, I built my own DB and had to make new fuctions to use different format of data.
 I also added a feature to use the DB data in the html page without using grid chart.
 This was done by using javascript variable in html body part.
-I have used the general design and the mecahnism of using DB, but the unique functionalities of Grade Tracker is made by me.
+Also, the mechanism to calculate the final scores and total scores is my implementation.  
+I have used the general design and the mecahnism of using DB, but the unique functionalities of Grade Tracker is all made by me.
 
 
 The link to DEMS is this: https://github.com/DormUnion/DEMS-admin.github.io
