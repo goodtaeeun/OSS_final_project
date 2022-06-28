@@ -4,7 +4,7 @@
 
 Grade Tracker is a SW that helps you keep track of your scores and grades.   
 If you take mutiple courses, it is hard to keep track of your scores.   
-As the semster reaches its end, wen must figure out where to invest more effort.   
+As the semster reaches its end, one must figure out where to invest more effort.   
 This SW will help you in that time.   
 <br/><br/>
 
