@@ -21,14 +21,14 @@ Make a Firebase database and replace this code with yours.
 
 ```jsx
 var firebaseConfig = {
-        apiKey: "AIzaSyCDCXU4a9qZwEzRevPx5pT0yW8Uu_zbt4I",
-        authDomain: "gradetracker-9f956.firebaseapp.com",
-        databaseURL: "https://gradetracker-9f956.firebaseio.com",
-        projectId: "gradetracker-9f956",
-        storageBucket: "gradetracker-9f956.appspot.com",
-        messagingSenderId: "368658407712",
-        appId: "1:368658407712:web:f7024d6989897988d6f745",
-        measurementId: "G-VWNF2C8LLJ"
+        apiKey: "...",
+        authDomain: "...",
+        databaseURL: "...",
+        projectId: "...",
+        storageBucket: "...",
+        messagingSenderId: "...",
+        appId: "...",
+        measurementId: "..."
       };
 //This section of code will be provided from Firebase
 ```
