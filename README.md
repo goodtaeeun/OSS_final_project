@@ -1,4 +1,4 @@
-21400217 Tae Eun Kim / 20-1 Opensource SW Lab Final project
+20-1 Opensource SW Lab Final project
 
 # What is Grade Tracker? 💯
 
@@ -187,6 +187,3 @@ These are the google searches I did myself to make this project.
 This is the end.   
 I hope you enjoy it.   
 If there is any problem, feel free to leave a issue.   
-   
-Or you can send an e-mail to me by this adresss. 21400217@handong.edu
-
